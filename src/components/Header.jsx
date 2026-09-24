@@ -1,10 +1,11 @@
 import { View, Text, StyleSheet } from 'react-native';
+import { COLORS } from '../constants/color';
 
-export function Header( {objetivo} ){
+export function Header( {goal} ){
     return(
         <View style={styles.container}>
             <Text style={styles.title}>Diario de HIdratação</Text>
-            <Text style={styles.subtitle}>Meta diaria: {objetivo}ml</Text>
+            <Text style={styles.subtitle}>Meta diaria: {goal}ml</Text>
         </View>
 
     )
@@ -18,14 +19,14 @@ const styles = StyleSheet.create({
     },
 
     title:{
-        color:'blue'/
+        color: COLORS.primary,
 
 
     },
 
     subtitle:{
-        backgroundColor:'black',
-        color:'white',
+        backgroundColor: COLORS.background,
+        color: COLORS.S,
 
     },
 
