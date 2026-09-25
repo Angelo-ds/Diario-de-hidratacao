@@ -2,7 +2,7 @@ import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { COLORS } from '../constants/color';
 
 
-export function ActionPressables(acrescentarAgua200,acrescentarAgua350,acrescentarAgua500,agua){
+export function ActionPressables({aoClicar}){
 
     return(
         <View style={styles.container}>
@@ -11,15 +11,15 @@ export function ActionPressables(acrescentarAgua200,acrescentarAgua350,acrescent
 
             <View style={styles.botoes}>
 
-                <Pressable title='+200ml' onPress={}>
+                <Pressable title='+200ml' onPress={() => aoClicar()}>
 
                 </Pressable>
                 
-                <Pressable title='+350ml' onPress={}>
+                <Pressable title='+350ml' onPress={() => aoClicar()}>
 
                 </Pressable>
 
-                <Pressable title='+500ml' onPress={}>
+                <Pressable title='+500ml' onPress={() => aoClicar()}>
 
                 </Pressable>
                 <View>
