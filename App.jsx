@@ -14,7 +14,7 @@ export default function App(){
       <StatusBar barStyle={'auto'}/>
       <View>
         <Header goal ={GOAL} />
-        <WaterProgress goal={GOAL} agua = {1000}/>
+        <WaterProgress goal={GOAL} agua = {500}/>
         {/* <ActionButtons/> */}
       </View>
       </SafeAreaView>
