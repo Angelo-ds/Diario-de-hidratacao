@@ -6,7 +6,7 @@ import { WaterProgress } from "./src/components/WaterProgress";
 
 
 export default function App(){
-  const GOAL= 2000
+  const GOAL= 300
   
   return(
     <SafeAreaProvider>
@@ -14,7 +14,7 @@ export default function App(){
       <StatusBar barStyle={'auto'}/>
       <View>
         <Header goal ={GOAL} />
-        <WaterProgress goal={GOAL} agua = {500}/>
+        <WaterProgress goal={GOAL} agua = {200}/>
         {/* <ActionButtons/> */}
       </View>
       </SafeAreaView>

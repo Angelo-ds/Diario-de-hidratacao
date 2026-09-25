@@ -19,7 +19,7 @@ export function WaterProgress({agua,goal}){
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: COLORS.cardBg,
+    backgroundColor: COLORS.cardbg,
     borderRadius: 16,
     padding: 20,
     width: '100%',
