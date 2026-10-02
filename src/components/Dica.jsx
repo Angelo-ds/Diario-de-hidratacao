@@ -4,24 +4,37 @@ import { COLORS } from '../constants/color';
 export function Dica(){
 
     return(
-        
-        <View style = {styles.container}>
+  
+      <View style = {styles.container}>
 
-          <Text style = {styles.title}>Dica de Saúde</Text>
-          <Text style = {styles.descricao}>Beber água regularmente melhora a concentração, a digestão e mantém a sua energia ao longo do dia!</Text>
+          <Text style = {styles.icon}>🔎</Text>
+          
+          <View style= {styles.textContainer}>
 
-        </View>
+            <Text style = {styles.title}>Dica de Saúde</Text>
+            <Text style = {styles.descricao}>Beber água regularmente melhora a concentração, a digestão e mantém a sua energia ao longo do dia!</Text>
+            
+          <View/>
+
+      </View>
+      </View>
 
     )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     alignItems: 'flex-start',
     gap: 12,
     marginTop: 16,
     paddingHorizontal: 8,
+  },
+  icon: {
+    fontSize: 24,
+  },
+  textContainer: {
+    flex: 1,
   },
   title: {
     fontSize: 14,
