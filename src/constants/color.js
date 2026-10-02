@@ -1,10 +1,12 @@
 export const COLORS = {
-    background:'#F0F9FF',
-    cardbg: '#FFFFFF',
-    primary:'blue',
-    secondary:'#3BBDFB',
-    textMain:'#0C4A5E',
-    textMuted:'#6474BB',
-    danger:'#EF4444',
+  background: '#FFFFFF',
+  cardBg: '#FFFFFF',
+  cardBorder: '#E0F2FE',     
+  primary: '#0284C7',
+  secondary:'blue',       
+  primaryDark: '#0369A1',    
+  textMuted: '#64748B',      
+  buttonLightBg: '#E0F2FE',  
+  buttonLightBorder: '#BAE6FD',
+  danger: '#EF4444',         
 };
-

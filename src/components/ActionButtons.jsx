@@ -11,6 +11,12 @@ export function ActionPressables({aoClicar, aoResetar}){
 
             <View style={styles.buttonRow}>
 
+                <Pressable style = {styles.button} onPress={() => aoClicar(100)}>
+
+                    <Text style={styles.buttonText}>+100 ml</Text>
+
+                </Pressable>
+                
                 <Pressable style = {styles.button} onPress={() => aoClicar(200)}>
 
                     <Text style={styles.buttonText}>+200 ml</Text>

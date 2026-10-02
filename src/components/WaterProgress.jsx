@@ -1,8 +1,12 @@
-import { View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { COLORS } from '../constants/color';
 
-export function WaterProgress({agua,goal}){
-    const progresso = (Math.min((agua / goal) * 100,100)).toFixed(0);
+export function WaterProgress({ agua, goal }){
+
+    const progresso = goal > 0 ? (Math.min((agua / goal) * 100, 100)).toFixed(0) : 0;
+
+    const metaAtingida = goal > 0 && agua >= goal;
+    
     return(
         <View style={styles.card}>
             <Text style={styles.consumedText}>Você bebeu {agua}ml de água hoje.</Text>
@@ -12,15 +16,19 @@ export function WaterProgress({agua,goal}){
                 <View style={[styles.progressBarFill, { width: `${progresso}%` }]} />
             </View>
 
+
+            {metaAtingida && (
+                <Text style={styles.goalReached}>
+                    Parabéns! Você atingiu sua meta de hidratação hoje!
+                </Text>
+            )}
         </View>
-    )
+    );
 }
-
-
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: COLORS.cardbg,
+    backgroundColor: COLORS.cardBg,
     borderRadius: 16,
     padding: 20,
     width: '100%',
@@ -53,5 +61,13 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: COLORS.secondary,
     borderRadius: 6,
+  },
+
+  goalReached: {
+    marginTop: 16,
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'green', 
+    textAlign: 'center',
   },
 });

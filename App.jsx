@@ -1,45 +1,57 @@
-import { StatusBar, View, Text, StyleSheet} from "react-native";
+import { StatusBar, View, StyleSheet } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 import { Header } from './src/components/Header';
 import { WaterProgress } from "./src/components/WaterProgress";
 import { ActionPressables } from "./src/components/ActionButtons";
 import { COLORS } from "./src/constants/color"; 
-
+import { Dica } from "./src/components/Dica";
+import { AjustarMeta } from "./src/components/AjustarMeta";
 
 export default function App(){
-  const GOAL= 10000;
-  const [adicionarAgua, setAgua]  = useState(0)
+
+  const [agua, setAgua] = useState(0);
+  const [goal, setGoal] = useState(2000); 
+
 
   const handleAddWater = (ml) => {
-
     setAgua((memoria) => memoria + ml);
   };
 
+
   const handleReset = () => {
-
     setAgua(0);
-
   };
 
 
+  const handleAumentarMeta = (ml) => {
+    setGoal((metaAtual) => metaAtual + ml);
+  };
+
+
+  const handleDiminuirMeta = (ml) => {
+    setGoal((metaAtual) => Math.max(0, metaAtual - ml));
+  };
+
   return(
     <SafeAreaProvider>
+      <SafeAreaView style={styles.container}> 
+        <StatusBar barStyle={'auto'}/>
 
-      <SafeAreaView style = {styles.container}> 
+        <View style={styles.content}>
 
-      <StatusBar barStyle={'auto'}/>
+          <Header goal={goal} />
 
-      <View style = {styles.content}>
+          <AjustarMeta aoApertarPositivo={handleAumentarMeta} aoApertarNegativo={handleDiminuirMeta} goal = {goal}/>
 
-        <Header goal ={GOAL} />
-        <WaterProgress agua = {adicionarAgua} goal={GOAL} />
-        <ActionPressables aoClicar={handleAddWater} aoResetar={handleReset}/>
+          <WaterProgress agua={agua} goal={goal} />
 
-      </View>
+          <ActionPressables aoClicar={handleAddWater} aoResetar={handleReset}/>
 
+          <Dica/>
+
+        </View>
       </SafeAreaView>
-
     </SafeAreaProvider>
   )
 }
@@ -55,4 +67,3 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-

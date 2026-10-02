@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { COLORS } from '../constants/color';
 
 export function Header( {goal} ){
@@ -15,12 +15,12 @@ export function Header( {goal} ){
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    marginBottom: 24,
+    marginVertical: 12,
   },
   title: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: COLORS.textMain,
+    color: COLORS.primaryDark,
   },
   subtitle: {
     fontSize: 14,
