@@ -17,7 +17,7 @@ export function ActionPressables({aoClicar, aoResetar}){
 
                 </Pressable>
                 
-                <Pressable style = {styles.button} onPress={() => aoClicar(500)}>
+                <Pressable style = {styles.button} onPress={() => aoClicar(350)}>
 
                     <Text style={styles.buttonText}>+350 ml</Text>
 
@@ -25,19 +25,17 @@ export function ActionPressables({aoClicar, aoResetar}){
 
                 <Pressable style = {styles.button} onPress={() => aoClicar(500)}>
 
-                    <Text style={styles.buttonText}>+400 ml</Text>
+                    <Text style={styles.buttonText}>+500 ml</Text>
 
                 </Pressable>
 
-                <View>
-
-                </View>
-                
-              <Pressable style={styles.resetButton} onPress={aoResetar}>
-              </Pressable>
-
-
             </View>
+                            
+              <Pressable style={styles.resetButton} onPress={aoResetar}>
+
+                    <Text style={styles.resetButton}> Reiniciar Dia</Text>
+
+              </Pressable>
 
 
         </View>
